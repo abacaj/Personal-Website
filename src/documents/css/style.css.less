@@ -579,10 +579,159 @@ header {
         display:inline-block;
         }
     }
+    img {
+        margin-left:40px;
+        margin-bottom:30px;
+    }
+    
     
 }
-    .right{float:right!important;right:0;left:auto;text-align:right;margin:10px 0 10px 0}
-    .left{float:left !important;left:0;left:auto;text-align:left;margin:10px 0 10px 0}
+
+/*
+    Mobile Menu Core Style
+*/
+
+.slicknav_btn { 
+    position: relative; 
+    display: block; 
+    vertical-align: middle;
+    float: right; 
+    padding: 0.438em 0.625em 0.438em 0.625em; 
+    line-height: 1.125em; 
+    cursor: pointer; 
+    .slicknav_icon-bar + .slicknav_icon-bar { 
+        margin-top: 0.188em; 
+            }
+}
+.slicknav_menu {  
+    .slicknav_menutxt { 
+        display: block; line-height: 1.188em; float: left; 
+       
+    }
+    .slicknav_icon { 
+        float: left; margin: 0.188em 0 0 0.438em; 
+    }
+    .slicknav_no-text { 
+        margin: 0; 
+        }
+    .slicknav_icon-bar { 
+        display: block; width: 1.125em; height: 0.125em; 
+        -webkit-border-radius: 1px; -moz-border-radius: 1px; 
+        border-radius: 1px; 
+    }
+    &:before,&:after{ 
+        content: " "; display: table; 
+    }
+}
+
+.slicknav_nav { 
+    clear: both; 
+        ul, li { 
+            display: block;
+                text-align:right;
+                }
+    .slicknav_arrow { 
+        font-size: 0.8em; margin: 0 0 0 0.4em; 
+    }
+    .slicknav_item { 
+        display: block; cursor: pointer; 
+        
+        a { 
+        display: inline 
+            
+        }
+    }
+    
+     a { 
+        display: block; 
+        color:white;
+        font-size:1.2em;
+        font-weight:900;
+            &:hover{
+                color:white !important;
+            }
+             }
+}
+
+
+.slicknav_menu:before,
+.slicknav_menu:after { content: " "; display: table; }
+.slicknav_menu:after { clear: both }
+/* IE6/7 support */
+.slicknav_menu { *zoom: 1 }
+
+/* 
+    User Default Style
+    Change the following styles to modify the appearance of the menu.
+*/
+
+.slicknav_menu {
+	font-size:16px;
+    display:none;
+}
+/* Button */
+.slicknav_btn {
+	margin: 5px 5px 6px;	
+	text-decoration:none;		
+	background-color: @color-grey;
+}
+/* Button Text */
+.slicknav_menu  .slicknav_menutxt {	
+	color: #FFF;
+	font-weight: bold;	
+}
+/* Button Lines */
+.slicknav_menu .slicknav_icon-bar {
+  background-color: white;
+}
+.slicknav_menu {
+	background:none;
+	padding:5px;
+}
+.slicknav_nav {
+	color:#fff;
+	margin:0;	
+	padding:0;
+	font-size:0.875em;
+}
+.slicknav_nav, .slicknav_nav ul {
+	list-style: none;
+	overflow:hidden;
+}
+.slicknav_nav ul {
+	padding:0;
+	margin:0 0 0 20px;
+}
+.slicknav_nav .slicknav_item {
+	padding:5px 10px;
+	margin:2px 5px;
+}
+.slicknav_nav a{
+	padding:5px 10px;
+	margin:2px 5px;
+	text-decoration:none;
+	color:#767c7c;
+}
+.slicknav_nav .slicknav_item a {
+	padding:0;
+	margin:0;
+}
+.slicknav_nav .slicknav_item:hover {
+	background:white;
+	color:#fff;	
+}
+.slicknav_nav a:hover{
+	background:@color-links;
+	color:#222;
+}
+.slicknav_nav .slicknav_txtnode {
+     margin-left:15px;   
+}
+
+
+.right{float:right!important;right:0;left:auto;text-align:right;margin:10px 0 10px 0}
+
+.left{float:left !important;left:0;left:auto;text-align:left;margin:10px 0 10px 0}
 footer {
     background:#222525;
     margin-top:100px;
@@ -717,8 +866,6 @@ a:link    {
 .button {
 line-height: 48px;
 padding: 0 20px;
--webkit-border-radius: 5px;
-border-radius: 5px;
 display: inline-block;
 color: #fff !important;
 font-weight: 700;
@@ -768,7 +915,6 @@ box-shadow: inset rgba(0,0,0,0.3) 0 1px 3px,inset rgba(0,0,0,0.06) 0 -1px 0;
         li {
         float: left;
         display: inline-block;
-        width: 100%;
         padding:25px;
         border-right:1px solid #c5c6c6;
         
@@ -836,7 +982,7 @@ box-shadow: inset rgba(0,0,0,0.3) 0 1px 3px,inset rgba(0,0,0,0.06) 0 -1px 0;
 
     img {
 	display: block;
-	max-width: 100%;
+	width: 100%;
     }
        
     .folio-wrapper {
@@ -979,6 +1125,22 @@ box-shadow: inset rgba(0,0,0,0.3) 0 1px 3px,inset rgba(0,0,0,0.06) 0 -1px 0;
         top:160px;
     }
    }
+    .slicknav_menu {
+    display:block;
+    }
+    header{
+        ul {display:none;}
+    }
+    header{
+        img {
+            position:absolute;
+            top:15px;
+            left:5px;
+            display:block !important;
+            margin:0;
+            width:190px;
+        }
+    }
 } 
 
 
