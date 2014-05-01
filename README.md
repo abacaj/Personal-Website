@@ -1,4 +1,4 @@
-# Your [DocPad](http://docpad.org) Project
+# My website built with [DocPad](http://docpad.org). Blog runs on [Ghost](http://ghost.org)
 
 ## License
-Copyright &copy; 2014+ All rights reserved.
+Copyright &copy; Anton Bacaj 2014+ All rights reserved.
