@@ -9,7 +9,9 @@
   "dependencies": {
     "docpad": "~6.64.2",
     "docpad-plugin-less": "~2.4.1",
-    "docpad-plugin-eco": "~2.0.3"
+    "docpad-plugin-eco": "~2.0.3",
+    "docpad-plugin-restapi": "~2.1.6",
+    "docpad-plugin-inlinegui": "~2.0.4"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

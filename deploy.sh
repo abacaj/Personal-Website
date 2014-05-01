@@ -1,87 +1,125 @@
-#!/bin/bash
+@if "%SCM_TRACE_LEVEL%" NEQ "4" @echo off
 
-# ----------------------
-# KUDU Deployment Script
-# ----------------------
+:: ----------------------
+:: KUDU Deployment Script
+:: ----------------------
 
-# Helpers
-# -------
+:: Prerequisites
+:: -------------
 
-exitWithMessageOnError () {
-  if [ ! $? -eq 0 ]; then
-    echo "An error has occured during web site deployment."
-    echo $1
-    exit 1
-  fi
-}
+:: Verify node.js installed
+where node 2>nul >nul
+IF %ERRORLEVEL% NEQ 0 (
+  echo Missing node.js executable, please install node.js, if already installed make sure it can be reached from current environment.
+  goto error
+)
 
-# Prerequisites
-# -------------
+:: Setup
+:: -----
 
-# Verify node.js installed
-hash node 2>/dev/null
-exitWithMessageOnError "Missing node.js executable, please install node.js, if already installed make sure it can be reached from current environment."
+setlocal enabledelayedexpansion
 
-# Setup
-# -----
+SET ARTIFACTS=%~dp0%artifacts
 
-SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-ARTIFACTS=$SCRIPT_DIR/artifacts
+IF NOT DEFINED DEPLOYMENT_SOURCE (
+  SET DEPLOYMENT_SOURCE=%~dp0%.
+)
 
-if [[ ! -n "$DEPLOYMENT_SOURCE" ]]; then
-  DEPLOYMENT_SOURCE=$SCRIPT_DIR
-fi
+IF NOT DEFINED DEPLOYMENT_TARGET (
+  SET DEPLOYMENT_TARGET=%ARTIFACTS%\wwwroot
+)
 
-if [[ ! -n "$NEXT_MANIFEST_PATH" ]]; then
-  NEXT_MANIFEST_PATH=$ARTIFACTS/manifest
+IF NOT DEFINED NEXT_MANIFEST_PATH (
+  SET NEXT_MANIFEST_PATH=%ARTIFACTS%\manifest
 
-  if [[ ! -n "$PREVIOUS_MANIFEST_PATH" ]]; then
-    PREVIOUS_MANIFEST_PATH=$NEXT_MANIFEST_PATH
-  fi
-fi
+  IF NOT DEFINED PREVIOUS_MANIFEST_PATH (
+    SET PREVIOUS_MANIFEST_PATH=%ARTIFACTS%\manifest
+  )
+)
 
-if [[ ! -n "$KUDU_SYNC_COMMAND" ]]; then
-  # Install kudu sync
+IF NOT DEFINED KUDU_SYNC_CMD (
+  :: Install kudu sync
   echo Installing Kudu Sync
-  npm install kudusync -g --silent
-  exitWithMessageOnError "npm failed"
+  call npm install kudusync -g --silent
+  IF !ERRORLEVEL! NEQ 0 goto error
 
-  KUDU_SYNC_COMMAND="kuduSync"
-fi
+  :: Locally just running "kuduSync" would also work
+  SET KUDU_SYNC_CMD=node "%appdata%\npm\node_modules\kuduSync\bin\kuduSync"
+)
+goto Deployment
 
-if [[ ! -n "$DEPLOYMENT_TARGET" ]]; then
-  DEPLOYMENT_TARGET=$ARTIFACTS/wwwroot
-else
-  # In case we are running on kudu service this is the correct location of kuduSync
-  KUDU_SYNC_COMMAND="$APPDATA\\npm\\node_modules\\kuduSync\\bin\\kuduSync"
-fi
+:: Utility Functions
+:: -----------------
 
-##################################################################################################################################
-# Deployment
-# ----------
+:SelectNodeVersion
 
-echo Handling deployment.
+IF DEFINED KUDU_SELECT_NODE_VERSION_CMD (
+  :: The following are done only on Windows Azure Websites environment
+  call %KUDU_SELECT_NODE_VERSION_CMD% "%DEPLOYMENT_SOURCE%" "%DEPLOYMENT_TARGET%" "%DEPLOYMENT_TEMP%"
+  IF !ERRORLEVEL! NEQ 0 goto error
 
-# 1. Install npm packages
-if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
-  cd "$DEPLOYMENT_SOURCE"
-  npm install --production --silent
-  exitWithMessageOnError "npm failed"
-  cd - > /dev/null
-fi
+  IF EXIST "%DEPLOYMENT_TEMP%\__nodeVersion.tmp" (
+    SET /p NODE_EXE=<"%DEPLOYMENT_TEMP%\__nodeVersion.tmp"
+    IF !ERRORLEVEL! NEQ 0 goto error
+  )
 
-# 2. Build DocPad Site
-echo Building the DocPad site
-cd "$DEPLOYMENT_SOURCE"
-node ./node_modules/docpad/bin/docpad generate
-exitWithMessageOnError "Docpad generation failed"
+  IF NOT DEFINED NODE_EXE (
+    SET NODE_EXE=node
+  )
 
-# 3. KuduSync
-echo Kudu Sync from "$DEPLOYMENT_SOURCE/out" to "$DEPLOYMENT_TARGET"
-$KUDU_SYNC_COMMAND -q -f "$DEPLOYMENT_SOURCE/out" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.deployment;deploy.sh" 2> /dev/null
-exitWithMessageOnError "Kudu Sync failed"
+  SET NPM_CMD="!NODE_EXE!" "%NPM_JS_PATH%"
+) ELSE (
+  SET NPM_CMD=npm
+  SET NODE_EXE=node
+)
 
+goto :EOF
 
-##################################################################################################################################
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: Deployment
+:: ----------
 
-echo "Finished successfully."
+:Deployment
+echo Handling DocPad deployment.
+
+:: 1. Select node version
+call :SelectNodeVersion
+
+:: 2. Install npm packages
+echo Installing npm packages...
+pushd "%DEPLOYMENT_SOURCE%"
+call !NPM_CMD! install --production
+IF !ERRORLEVEL! NEQ 0 goto error
+popd
+
+:: 2. Build DocPad site
+echo Building DocPad site...
+pushd "%DEPLOYMENT_SOURCE%"
+rd /s /q out
+IF !ERRORLEVEL! NEQ 0 goto error
+"!NODE_EXE!" .\node_modules\docpad\bin\docpad -e static generate
+IF !ERRORLEVEL! NEQ 0 goto error
+popd
+
+:: 3. KuduSync
+echo Copying Files...
+call %KUDU_SYNC_CMD% -v 500 -i "posts;drafts" -f "%DEPLOYMENT_SOURCE%\out" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%"
+IF !ERRORLEVEL! NEQ 0 goto error
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+goto end
+
+:error
+echo An error has occurred during web site deployment.
+call :exitSetErrorLevel
+call :exitFromFunction 2>nul
+
+:exitSetErrorLevel
+exit /b 1
+
+:exitFromFunction
+()
+
+:end
+echo Finished successfully.
