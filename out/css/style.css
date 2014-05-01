@@ -847,6 +847,7 @@ a:link {
   background: url('/images/heartred@2x.png') no-repeat;
   background-size: 15px;
 }
+/*BEGIN MEDIA QUERY*/
 @media only screen and (max-width: 767px) {
   .right {
     float: none!important;

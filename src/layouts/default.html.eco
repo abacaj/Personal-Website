@@ -4,20 +4,18 @@
     
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title><%= @document.title %> | My Website</title>
-        <meta name="description" content="">
+        <title><%= @getPreparedTitle() %></title>
+        <meta name="description" content="<%= @getPreparedDescription() %>"/>
+        <meta name="keywords" content="<%= @getPreparedKeywords() %>"/>
+        <meta name="author" content="<%= @site.author or '' %>"/>
         <meta http-equiv="cleartype" content="on" />
-        <meta name="MobileOptimized" content="15" />
+        <meta name="MobileOptimized" content="width" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="HandheldFriendly" content="true" />
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <%- @getBlock("styles").add(["//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"]).toHTML() %>
         <%- @getBlock("styles").add(["/css/style.css"]).toHTML() %>
-        <%- @getBlock("scripts").add(["/js/modernizr.js"]).toHTML() %>
-        <%- @getBlock("scripts").add(["https://code.jquery.com/jquery-2.1.0.min.js"]).toHTML() %>
-        <%- @getBlock("scripts").add(["//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"]).toHTML() %>
-         <%- @getBlock("scripts").add(["/js/custom.js"]).toHTML() %>
-        
+
     </head>
     
     <body>
@@ -66,6 +64,12 @@
         </div>
         </div>
         </footer>
+        
+        <%- @getBlock("scripts").add(["/js/modernizr.js"]).toHTML() %>
+        <%- @getBlock("scripts").add(["https://code.jquery.com/jquery-2.1.0.min.js"]).toHTML() %>
+        <%- @getBlock("scripts").add(["//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"]).toHTML() %>
+        <%- @getBlock("scripts").add(["/js/custom.js"]).toHTML() %>
+        
     </body>
 
 </html>
