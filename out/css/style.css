@@ -617,7 +617,7 @@ header img {
   padding: 5px 10px;
   margin: 2px 5px;
   text-decoration: none;
-  color: #767c7c;
+  color: white;
 }
 .slicknav_nav .slicknav_item a {
   padding: 0;
@@ -1023,16 +1023,12 @@ a:link {
   }
   .slicknav_menu {
     display: block;
+    background-color: #95a5a6;
   }
   header ul {
     display: none;
   }
   header img {
-    position: absolute;
-    top: 15px;
-    left: 5px;
-    display: block !important;
-    margin: 0;
-    width: 190px;
+    display: none;
   }
 }
