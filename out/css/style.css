@@ -679,15 +679,14 @@ footer .copyright {
   padding-bottom: 5px;
 }
 footer a {
+  margin-top: 5px;
   color: #95a5a6;
-  font-size: 1.2em;
   display: inline-block;
-  width: 32px;
-  height: 32px;
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border: solid 2px #545f63;
-  font-size: 0;
+  font-size: 1.2em;
+  padding: 5px;
   font-weight: 900;
 }
 footer a:hover {
@@ -699,7 +698,7 @@ footer ul {
   padding: 0;
 }
 footer ul li {
-  padding: 0 10px 0 10px;
+  padding-left: 10px;
   display: inline-block;
 }
 footer span {
@@ -780,6 +779,8 @@ a:link {
   font-size: 12px;
   text-transform: uppercase;
   position: relative;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
 }
 .button:after {
   opacity: 0;
@@ -825,6 +826,9 @@ a:link {
   padding: 25px;
   border-right: 1px solid #c5c6c6;
 }
+.folio ul li:last-of-type {
+  border-right: 0;
+}
 .folio h1 {
   font: 900 2.3em Bariol, Georgia;
   color: white;
@@ -834,7 +838,7 @@ a:link {
   color: white;
   position: absolute;
   right: 27px;
-  top: 0;
+  top: 10px;
   margin: 0;
 }
 .folio p {
@@ -877,6 +881,7 @@ a:link {
 .folio-shots img {
   display: block;
   width: 100%;
+  border: 3px solid white;
 }
 .folio-shots .folio-wrapper {
   position: relative;
@@ -932,17 +937,16 @@ a:link {
   opacity: 1;
   border-left: 1px solid #1575b5;
 }
-.folio-shots .like {
+.folio-shots .like:before {
   float: left;
   opacity: 1;
   position: absolute;
-  height: 42px;
-  width: 42px;
   right: 10px;
-  top: -10px;
+  top: -8px;
   content: "";
-  background: url('/images/heart@2x.png') no-repeat;
-  background-size: 42px;
+  font: 3.5em 'custom_entypo';
+  content: '\e807';
+  color: #f24c27;
 }
 .sub_message h6 {
   font-size: 1em;
@@ -1011,6 +1015,12 @@ a:link {
     text-align: center;
     margin: 10px 0 10px 0;
   }
+  .folio ul li {
+    float: left;
+    display: inline-block;
+    padding: 25px;
+    border: 0;
+  }
   footer .copyright {
     text-align: center ;
   }
@@ -1021,9 +1031,17 @@ a:link {
   footer span {
     top: 160px;
   }
+  footer ul {
+    margin: 0;
+    padding: 0;
+  }
+  footer ul li {
+    padding: 0 5px 0 5px;
+    display: inline-block;
+  }
   .slicknav_menu {
     display: block;
-    background-color: #95a5a6;
+    background-color: #818b8c;
   }
   header ul {
     display: none;

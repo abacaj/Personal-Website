@@ -14,8 +14,9 @@
         <meta name="HandheldFriendly" content="true" />
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <%- @getBlock("styles").add(["//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"]).toHTML() %>
+        <%- @getBlock("styles").add(["/css/custom_entypo.css"]).toHTML() %>
+        <%- @getBlock("styles").add(["/css/custom_icons.css"]).toHTML() %>
         <%- @getBlock("styles").add(["/css/style.css"]).toHTML() %>
-
     </head>
     
     <body>
@@ -56,10 +57,10 @@
         <div class="col-lg-4  right">
         <div class="connect">CONNECT WITH ME</div>
         <ul>
-          <li><a href="work.html">Work</a></li>
-           <li><a href="work.html">About</a></li>
-            <li><a href="work.html">Blog</a></li>
-             <li><a href="work.html">Contact</a></li>
+          <li><a href="https://github.com/abacaj1/Personal-Website"><i class="ent-github-1"></i></a></li>
+           <li><a href="https://dribbble.com/abacaj"><i class="ent-dribbble-1"></i></a></li>
+           <li><a href="https://twitter.com/abacaj90"><i class="ent-twitter-1"></i></a></li>
+             <li><a href="mailto:abacaj1@gmail.com?subject=Hi%20Anton%20,I%20would%20love%20to%20hire%20you."><i class="ent-mail-1"></i></a></li>
         </ul>
         </div>
         </div>
