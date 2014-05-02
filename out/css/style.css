@@ -1046,6 +1046,15 @@ a:link {
     text-align: center;
     margin: 10px 0 10px 0;
   }
+  .main_message {
+    margin-top: 90px;
+  }
+  .main_message p {
+    font-size: 2em;
+  }
+  .main_message p:nth-of-type(2) {
+    font-size: 1.2em;
+  }
   .folio ul li {
     float: left;
     display: inline-block;
