@@ -17,32 +17,32 @@
         <%- @getBlock("styles").add(["/css/custom_entypo.css"]).toHTML() %>
         <%- @getBlock("styles").add(["/css/custom_icons.css"]).toHTML() %>
         <%- @getBlock("styles").add(["/css/style.css"]).toHTML() %>
+        <%- @getBlock("styles").add(["http://fonts.googleapis.com/css?family=Leckerli+One"]).toHTML() %>
     </head>
     
     <body>
-        <div class="container">
         
         <header>
         
+        <div class="container">
         <div class="row">
         
-        <div class="pull-left">
-        <img src="/images/logo.png">
+        <div class="col-lg-4 pull-left text-left">
+        <h4>ANTON BACAJ</H4>
         </div>
         
         <div class="col-lg-8 pull-right text-right">
         <ul id="menu">
-          <li><a href="work.html">Work</a></li>
-           <li><a href="work.html">About</a></li>
-            <li><a href="work.html">Blog</a></li>
-             <li><a href="work.html">Contact</a></li>
+          <li><a href="#folio">Work</a></li>
+            <li><a href="#">Blog</a></li>
+             <li><a href="mailto:abacaj1@gmail.com?subject=Hi%20Anton%20,%20I%20would%20love%20to%20hire%20you.">Contact</a></li>
         </ul>
         </div>
         
         </div>
+        </div>
         </header>
         
-        </div>
         
 
         <%- @content %>
@@ -60,7 +60,7 @@
           <li><a href="https://github.com/abacaj1/Personal-Website"><i class="ent-github-1"></i></a></li>
            <li><a href="https://dribbble.com/abacaj"><i class="ent-dribbble-1"></i></a></li>
            <li><a href="https://twitter.com/abacaj90"><i class="ent-twitter-1"></i></a></li>
-             <li><a href="mailto:abacaj1@gmail.com?subject=Hi%20Anton%20,I%20would%20love%20to%20hire%20you."><i class="ent-mail-1"></i></a></li>
+             <li><a href="mailto:abacaj1@gmail.com?subject=Hi%20Anton%20,%20I%20would%20love%20to%20hire%20you."><i class="ent-mail-1"></i></a></li>
         </ul>
         </div>
         </div>

@@ -549,8 +549,20 @@ letter-spacing: 2px;
         src: url('/fonts/Bariol_Regular.otf');
         font-weight: normal;
         font-style: normal;}
+@font-face {
+        font-family: 'Intro';
+        src: url('/fonts/Intro.otf');
+        font-weight: normal;
+        font-style: normal;}
+@font-face {
+        font-family: 'Intro-inline';
+        src: url('/fonts/Intro-inline.otf');
+        font-weight: normal;
+        font-style: normal;}
 @h1:900 2.3em Bariol, Georgia;
 @h2:300 1.7em Bariol, Georgia;
+@f3:900 1.7em Intro, Georgia;
+@f4:300 3em Intro-inline, Georgia;
 @color-base:#F2EFDC;
 @color-links:#3498db;
 @color-orange:#F24C27;
@@ -558,13 +570,14 @@ letter-spacing: 2px;
 @color-purple:#9b59b6;
 @color-green:#2ecc71;
 @margin:25px;
-
+@dark-shadow:0px 1px 0px #e5e5ee;
+@light-shadow:0px -1px 0px #374683;
 html,body {
     background:white;
 }
 
 header {
-    margin-top:@margin;
+    padding:20px 0 10px 0;
     a{
     color:@color-grey;
     font-size:1.2em;
@@ -575,18 +588,26 @@ header {
     }
     ul{
         li {
-        padding-left:15px;
+        padding-left:10px;
+        padding-right:10px;
         display:inline-block;
         }
     }
-    img {
-        margin-left:40px;
-        margin-bottom:30px;
+    h4 {
+        font:100 100px/1.2 'Leckerli One', Helvetica, sans-serif;
+        color:@color-grey;
+        font-size:2em;
+        margin:0 0 0 0;
+        text-shadow:@dark-shadow;
+
     }
     
     
 }
+.background {
+    background:url('/images/icons-red.jpg');
 
+}
 /*
     Mobile Menu Core Style
 */
@@ -821,7 +842,7 @@ hr {
     
     
      p {
-      font:@h1;
+      font:@f4;
       color:@color-grey; 
       margin-top:-25px;
     }
@@ -840,12 +861,18 @@ hr {
       color:@color-orange;
     }
     a {
--webkit-transition: all .2s ease-in-out;
--moz-transition: all .2s ease-in-out;
--o-transition: all .2s ease-in-out;
--ms-transition: all .2s ease-in-out;
-transition: all .2s ease-in-out;
-}
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    }
+    img {
+        width:100px;
+        margin:10px 0 10px 0;
+        opacity:.5;
+        border-radius: 50%;
+    }
 }
 
 
@@ -867,11 +894,11 @@ padding: 0 20px;
 display: inline-block;
 color: #fff !important;
 font-weight: 700;
-font-size: 12px;
+font-size: 1.2em;
 text-transform: uppercase;
 position: relative;
-border-radius:50px;
--webkit-border-radius:50px;
+border-radius:5px;
+-webkit-border-radius:5px;
     
     &:after {
 opacity: 0;
@@ -894,17 +921,12 @@ background-size: 10px 6px;
 	padding-right: 40px;
         &:after{
             opacity:1;
-            border-left:1px solid #c62e0c;
         }
     }
 }
 
-.folio {background-color: #e8eaec;
-background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d9dcde), color-stop(100%, #eaecee)),#e8eaec; 
-background: -webkit-linear-gradient(#d9dcde,#eaecee),#e8eaec; 
-background: -moz-linear-gradient(#d9dcde,#eaecee),#e8eaec;
-background: -o-linear-gradient(#d9dcde,#eaecee),#e8eaec;
-background: linear-gradient(#d9dcde,#eaecee),#e8eaec; 
+.folio { 
+background:#222525;
 -webkit-box-shadow: inset rgba(0,0,0,0.3) 0 1px 3px,inset rgba(0,0,0,0.06) 0 -1px 0; 
 -moz-box-shadow: inset rgba(0,0,0,0.3) 0 1px 3px,inset rgba(0,0,0,0.06) 0 -1px 0;
 box-shadow: inset rgba(0,0,0,0.3) 0 1px 3px,inset rgba(0,0,0,0.06) 0 -1px 0; 
@@ -949,7 +971,16 @@ box-shadow: inset rgba(0,0,0,0.3) 0 1px 3px,inset rgba(0,0,0,0.06) 0 -1px 0;
     transition: all .2s ease-in-out;	
     display: inline-block;
     }
-
+    h4{
+        text-align:center;
+        .labels;
+        color:white;
+        
+        span{
+            color:@color-orange;
+        }
+        
+    }
 
 }
     
@@ -1046,7 +1077,6 @@ box-shadow: inset rgba(0,0,0,0.3) 0 1px 3px,inset rgba(0,0,0,0.06) 0 -1px 0;
                
             &:after{
                 opacity:1;
-                border-left:1px solid #1575b5;
             }
         }
     }
@@ -1151,13 +1181,19 @@ box-shadow: inset rgba(0,0,0,0.3) 0 1px 3px,inset rgba(0,0,0,0.06) 0 -1px 0;
     background-color:#818b8c;
     }
     header{
-        ul {display:none;}
-    }
-    header{
-        img {
+        margin:0;
+        padding:0;
+        ul {
+            display:none;
+        }
+         img {
+            display:none;
+        }
+        h4{
             display:none;
         }
     }
+
 } 
 
 
