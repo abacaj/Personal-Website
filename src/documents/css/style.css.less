@@ -883,46 +883,46 @@ a:link    {
   } 
 
 
-
 .btn-purple{background:@color-purple;}
 .btn-green{background:@color-green;}
 .btn-blue{background:@color-links;}
 .btn-red{background:@color-orange;}
 .button {
-line-height: 48px;
-padding: 0 20px;
-display: inline-block;
-color: #fff !important;
-font-weight: 700;
-font-size: 1.2em;
+cursor: pointer;
 text-transform: uppercase;
+text-decoration: none;
+font-family: proxima-nova,sans-serif;
+color: #fff;
+font-weight: 700;
+text-shadow: 0 -1px #6f5ea1;
+background: rgb(251,113,71); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(251,113,71,1) 0%, rgba(247,137,107,1) 0%, rgba(246,86,46,1) 31%, rgba(250,79,36,1) 100%, rgba(241,86,55,1) 100%, rgba(250,79,36,1) 102%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(251,113,71,1)), color-stop(0%,rgba(247,137,107,1)), color-stop(31%,rgba(246,86,46,1)), color-stop(100%,rgba(250,79,36,1)), color-stop(100%,rgba(241,86,55,1)), color-stop(102%,rgba(250,79,36,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(251,113,71,1) 0%,rgba(247,137,107,1) 0%,rgba(246,86,46,1) 31%,rgba(250,79,36,1) 100%,rgba(241,86,55,1) 100%,rgba(250,79,36,1) 102%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(251,113,71,1) 0%,rgba(247,137,107,1) 0%,rgba(246,86,46,1) 31%,rgba(250,79,36,1) 100%,rgba(241,86,55,1) 100%,rgba(250,79,36,1) 102%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(251,113,71,1) 0%,rgba(247,137,107,1) 0%,rgba(246,86,46,1) 31%,rgba(250,79,36,1) 100%,rgba(241,86,55,1) 100%,rgba(250,79,36,1) 102%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(251,113,71,1) 0%,rgba(247,137,107,1) 0%,rgba(246,86,46,1) 31%,rgba(250,79,36,1) 100%,rgba(241,86,55,1) 100%,rgba(250,79,36,1) 102%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb7147', endColorstr='#fa4f24',GradientType=0 ); /* IE6-9 */
+-webkit-box-shadow: inset 0 -1px #9479c9,0 1px 2px #e1e4e8;
+-moz-box-shadow: inset 0 -1px #9479c9,0 1px 2px #e1e4e8;
+box-shadow: inset 0 -1px #9479c9,0 1px 2px #e1e4e8;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+display: inline-block;
 position: relative;
-border-radius:5px;
--webkit-border-radius:5px;
-    
-    &:after {
-opacity: 0;
-position: absolute;
-height: 100%;
-width: 6px;
-right: 7px;            
-padding-left:15px;
-content: "";
-background: url('/images/bottom@2x.png') no-repeat right center;
-background-size: 10px 6px;
-	-webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	-ms-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out; 
-    }
-    
-    &:hover {
-	padding-right: 40px;
-        &:after{
-            opacity:1;
+padding: 15px;
+     &:hover {color:#fff;
+         background: rgb(251,113,71); /* Old browsers */
+        background: -moz-linear-gradient(top,  rgba(251,113,71,1) 0%, rgba(247,137,107,1) 0%, rgba(246,86,46,1) 39%, rgba(250,79,36,1) 100%, rgba(241,86,55,1) 100%, rgba(250,79,36,1) 102%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(251,113,71,1)), color-stop(0%,rgba(247,137,107,1)), color-stop(39%,rgba(246,86,46,1)), color-stop(100%,rgba(250,79,36,1)), color-stop(100%,rgba(241,86,55,1)), color-stop(102%,rgba(250,79,36,1))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgba(251,113,71,1) 0%,rgba(247,137,107,1) 0%,rgba(246,86,46,1) 39%,rgba(250,79,36,1) 100%,rgba(241,86,55,1) 100%,rgba(250,79,36,1) 102%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgba(251,113,71,1) 0%,rgba(247,137,107,1) 0%,rgba(246,86,46,1) 39%,rgba(250,79,36,1) 100%,rgba(241,86,55,1) 100%,rgba(250,79,36,1) 102%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgba(251,113,71,1) 0%,rgba(247,137,107,1) 0%,rgba(246,86,46,1) 39%,rgba(250,79,36,1) 100%,rgba(241,86,55,1) 100%,rgba(250,79,36,1) 102%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgba(251,113,71,1) 0%,rgba(247,137,107,1) 0%,rgba(246,86,46,1) 39%,rgba(250,79,36,1) 100%,rgba(241,86,55,1) 100%,rgba(250,79,36,1) 102%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb7147', endColorstr='#fa4f24',GradientType=0 ); /* IE6-9 */
         }
-    }
+   
 }
 
 .folio { 
