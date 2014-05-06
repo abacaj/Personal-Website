@@ -484,12 +484,12 @@ header {
   padding: 20px 0 10px 0;
 }
 header a {
-  color: #95a5a6;
+  color: white;
   font-size: 1.2em;
   font-weight: 900;
 }
 header a:hover {
-  color: #f24c27;
+  color: #3498db;
 }
 header ul li {
   padding-left: 10px;
@@ -498,13 +498,15 @@ header ul li {
 }
 header h4 {
   font: 100 100px/1.2 'Leckerli One', Helvetica, sans-serif;
-  color: #95a5a6;
+  color: white;
   font-size: 2em;
   margin: 0 0 0 0;
   text-shadow: 0px 1px 0px #e5e5ee;
 }
 .background {
-  background: url('/images/icons-red.jpg');
+  background: url('/images/WinterFrost.jpg') no-repeat;
+  background-size: cover;
+  background-position: 100% 15%;
 }
 /*
     Mobile Menu Core Style
@@ -647,7 +649,7 @@ header h4 {
   color: #fff;
 }
 .slicknav_nav a:hover {
-  background: #3498db;
+  background: #95a5a6;
   color: #222;
 }
 .slicknav_nav .slicknav_txtnode {
@@ -668,17 +670,17 @@ header h4 {
   margin: 10px 0 10px 0;
 }
 footer {
-  background: #222525;
+  background: #232e3f;
   margin-top: 100px;
   padding: 60px 0 65px 0;
   position: relative;
 }
 footer p {
-  color: #545f63;
+  color: #95a5a6;
   margin-top: 20px;
 }
 footer .connect {
-  color: #3a4346;
+  color: white;
   display: block;
   font-weight: bold;
   position: relative;
@@ -688,7 +690,7 @@ footer .connect {
   padding-bottom: 5px;
 }
 footer .copyright {
-  color: #3a4346;
+  color: white;
   font-weight: bold;
   display: block;
   position: relative;
@@ -754,12 +756,12 @@ hr {
 }
 .main_message p {
   font: 300 3em Intro-inline, Georgia;
-  color: #95a5a6;
+  color: white;
   margin-top: -25px;
 }
 .main_message p:nth-of-type(2) {
   font: 300 1.7em Bariol, Georgia;
-  color: #95a5a6;
+  color: white;
   margin-top: -25px;
 }
 .main_message span {
@@ -778,6 +780,15 @@ hr {
   margin: 10px 0 10px 0;
   opacity: .5;
   border-radius: 50%;
+}
+.skills {
+  background: black;
+}
+.skills h1 {
+  font: 400 1.5em Bariol, Georgia;
+  color: #f24c27;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 a:link {
   /* Applies to all unvisited links */
@@ -801,55 +812,22 @@ a:link {
   text-decoration: none;
   font-family: proxima-nova, sans-serif;
   color: #fff;
-  font-weight: 700;
-  text-shadow: 0 -1px #6f5ea1;
-  background: #fb7147;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #fb7147 0%, #f7896b 0%, #f6562e 31%, #fa4f24 100%, #f15637 100%, #fa4f24 102%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fb7147), color-stop(0%, #f7896b), color-stop(31%, #f6562e), color-stop(100%, #fa4f24), color-stop(100%, #f15637), color-stop(102%, #fa4f24));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #fb7147 0%, #f7896b 0%, #f6562e 31%, #fa4f24 100%, #f15637 100%, #fa4f24 102%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #fb7147 0%, #f7896b 0%, #f6562e 31%, #fa4f24 100%, #f15637 100%, #fa4f24 102%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #fb7147 0%, #f7896b 0%, #f6562e 31%, #fa4f24 100%, #f15637 100%, #fa4f24 102%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #fb7147 0%, #f7896b 0%, #f6562e 31%, #fa4f24 100%, #f15637 100%, #fa4f24 102%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb7147', endColorstr='#fa4f24', GradientType=0);
-  /* IE6-9 */
-  -webkit-box-shadow: inset 0 -1px #9479c9, 0 1px 2px #e1e4e8;
-  -moz-box-shadow: inset 0 -1px #9479c9, 0 1px 2px #e1e4e8;
-  box-shadow: inset 0 -1px #9479c9, 0 1px 2px #e1e4e8;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  font-size: 1.2em;
+  font-weight: 400;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   display: inline-block;
   position: relative;
   padding: 15px;
+  width: 200px;
 }
 .button:hover {
   color: #fff;
   background: #fb7147;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #fb7147 0%, #f7896b 0%, #f6562e 39%, #fa4f24 100%, #f15637 100%, #fa4f24 102%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fb7147), color-stop(0%, #f7896b), color-stop(39%, #f6562e), color-stop(100%, #fa4f24), color-stop(100%, #f15637), color-stop(102%, #fa4f24));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #fb7147 0%, #f7896b 0%, #f6562e 39%, #fa4f24 100%, #f15637 100%, #fa4f24 102%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #fb7147 0%, #f7896b 0%, #f6562e 39%, #fa4f24 100%, #f15637 100%, #fa4f24 102%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #fb7147 0%, #f7896b 0%, #f6562e 39%, #fa4f24 100%, #f15637 100%, #fa4f24 102%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #fb7147 0%, #f7896b 0%, #f6562e 39%, #fa4f24 100%, #f15637 100%, #fa4f24 102%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb7147', endColorstr='#fa4f24', GradientType=0);
-  /* IE6-9 */
 }
 .folio {
-  background: #222525;
+  background: #232e3f;
   -webkit-box-shadow: inset rgba(0, 0, 0, 0.3) 0 1px 3px, inset rgba(0, 0, 0, 0.06) 0 -1px 0;
   -moz-box-shadow: inset rgba(0, 0, 0, 0.3) 0 1px 3px, inset rgba(0, 0, 0, 0.06) 0 -1px 0;
   box-shadow: inset rgba(0, 0, 0, 0.3) 0 1px 3px, inset rgba(0, 0, 0, 0.06) 0 -1px 0;
@@ -872,10 +850,10 @@ a:link {
   color: white;
 }
 .folio h2 {
-  font-size: 1em;
+  font-size: .9em;
   color: white;
   position: absolute;
-  right: 27px;
+  right: 25px;
   top: 10px;
   margin: 0;
 }
@@ -987,17 +965,6 @@ a:link {
 .folio-shots .view-more-button:hover:after {
   opacity: 1;
 }
-.folio-shots .like:before {
-  float: left;
-  opacity: 1;
-  position: absolute;
-  right: 10px;
-  top: -8px;
-  content: "";
-  font: 3.5em 'custom_entypo';
-  content: '\e807';
-  color: #f24c27;
-}
 .sub_message h6 {
   font-size: 1em;
   line-height: 18px;
@@ -1100,7 +1067,7 @@ a:link {
   }
   .slicknav_menu {
     display: block;
-    background-color: #818b8c;
+    background-color: #232e3f;
   }
   header {
     margin: 0;
