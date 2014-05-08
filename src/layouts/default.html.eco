@@ -16,8 +16,10 @@
         <%- @getBlock("styles").add(["//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"]).toHTML() %>
         <%- @getBlock("styles").add(["/css/custom_entypo.css"]).toHTML() %>
         <%- @getBlock("styles").add(["/css/custom_icons.css"]).toHTML() %>
+        <%- @getBlock("styles").add(["/css/flexslider.css"]).toHTML() %>
         <%- @getBlock("styles").add(["/css/style.css"]).toHTML() %>
         <%- @getBlock("styles").add(["http://fonts.googleapis.com/css?family=Leckerli+One"]).toHTML() %>
+     
     </head>
     
     <body>
@@ -71,6 +73,7 @@
         <%- @getBlock("scripts").add(["//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"]).toHTML() %>
         <%- @getBlock("scripts").add(["/js/jquery-slicknav.js"]).toHTML() %>
         <%- @getBlock("scripts").add(["/js/custom.js"]).toHTML() %>
+        <%- @getBlock("scripts").add(["/js/jquery-flexslider.js"]).toHTML() %>
         
     </body>
 

@@ -504,7 +504,7 @@ header h4 {
   text-shadow: 0px 1px 0px #e5e5ee;
 }
 .background {
-  background: url('/images/WinterFrost.jpg') no-repeat;
+  background: url('/images/WinterFrost.png') no-repeat;
   background-size: cover;
   background-position: 100% 15%;
 }
@@ -655,6 +655,138 @@ header h4 {
 .slicknav_nav .slicknav_txtnode {
   margin-left: 15px;
 }
+#slides {
+  display: none;
+}
+#slides .slidesjs-navigation {
+  margin-top: 5px;
+  margin-left: 15px;
+}
+a.slidesjs-next,
+a.slidesjs-previous,
+a.slidesjs-play,
+a.slidesjs-stop {
+  background-image: url(/images/btns-next-prev.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 12px;
+  height: 18px;
+  overflow: hidden;
+  text-indent: -9999px;
+  float: left;
+  margin-right: 5px;
+}
+a.slidesjs-next {
+  margin-right: 10px;
+  background-position: -12px 0;
+}
+a:hover.slidesjs-next {
+  background-position: -12px -18px;
+}
+a.slidesjs-previous {
+  background-position: 0 0;
+}
+a:hover.slidesjs-previous {
+  background-position: 0 -18px;
+}
+a.slidesjs-play {
+  width: 15px;
+  background-position: -25px 0;
+}
+a:hover.slidesjs-play {
+  background-position: -25px -18px;
+}
+a.slidesjs-stop {
+  width: 18px;
+  background-position: -41px 0;
+}
+a:hover.slidesjs-stop {
+  background-position: -41px -18px;
+}
+.slidesjs-pagination {
+  position: relative;
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.slidesjs-pagination li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.slidesjs-pagination li a {
+  text-align: center;
+}
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+  background-position: 0 -13px;
+}
+.slidesjs-pagination li a:hover {
+  background-position: 0 -26px;
+}
+#slides a:link,
+#slides a:visited {
+  color: #333333;
+}
+#slides a:hover,
+#slides a:active {
+  color: #9e2020;
+}
+.navbar {
+  overflow: hidden;
+}
+#slides {
+  display: none;
+}
+.slide-container {
+  margin: 30px auto;
+  width: 550px;
+}
+/* For tablets & smart phones */
+@media (max-width: 767px) {
+  .slide-container {
+    width: auto;
+  }
+}
+/* For smartphones */
+@media (max-width: 480px) {
+  .slide-container {
+    width: auto;
+  }
+}
+.slide h4 {
+  font-size: 1em;
+  line-height: 18px;
+  color: #a6b1b3;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #95a5a6;
+}
+.slide h4 span {
+  color: #f24c27;
+}
+.slide img {
+  width: 90%;
+  margin: 0 auto;
+}
+.flex-nav-container {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 50%;
+  position: relative;
+}
+.flex-caption {
+  padding: 0;
+  margin: 0;
+  background: black;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px;
+  text-align: center;
+}
 .right {
   float: right!important;
   right: 0;
@@ -670,7 +802,7 @@ header h4 {
   margin: 10px 0 10px 0;
 }
 footer {
-  background: #232e3f;
+  background: #2d2d2d;
   margin-top: 100px;
   padding: 60px 0 65px 0;
   position: relative;
@@ -782,7 +914,7 @@ hr {
   border-radius: 50%;
 }
 .skills {
-  background: black;
+  background: #2d2d2d;
 }
 .skills .media {
   /*box-shadow:0px 0px 4px -2px #000;*/
@@ -855,25 +987,6 @@ a:link {
   color: #fff;
   background: #fb7147;
 }
-.folio {
-  background: #232e3f;
-  -webkit-box-shadow: inset rgba(0, 0, 0, 0.3) 0 1px 3px, inset rgba(0, 0, 0, 0.06) 0 -1px 0;
-  -moz-box-shadow: inset rgba(0, 0, 0, 0.3) 0 1px 3px, inset rgba(0, 0, 0, 0.06) 0 -1px 0;
-  box-shadow: inset rgba(0, 0, 0, 0.3) 0 1px 3px, inset rgba(0, 0, 0, 0.06) 0 -1px 0;
-}
-.folio ul {
-  margin: 0;
-  padding: 0;
-}
-.folio ul li {
-  float: left;
-  display: inline-block;
-  padding: 25px;
-  border-right: 1px solid #c5c6c6;
-}
-.folio ul li:last-of-type {
-  border-right: 0;
-}
 .folio h1 {
   font: 900 2.3em Bariol, Georgia;
   color: white;
@@ -885,18 +998,6 @@ a:link {
   right: 25px;
   top: 10px;
   margin: 0;
-}
-.folio p {
-  font: 300 1.7em Bariol, Georgia;
-  color: white;
-}
-.folio a {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  display: inline-block;
 }
 .folio h4 {
   font-size: 1em;
@@ -1070,10 +1171,15 @@ a:link {
   .main_message p:nth-of-type(2) {
     font-size: 1.2em;
   }
+  .flex-nav-container {
+    float: none;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 100%;
+  }
   .folio ul li {
     float: left;
     display: inline-block;
-    padding: 25px;
     border: 0;
   }
   footer .copyright {
