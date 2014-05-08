@@ -890,7 +890,6 @@ hr {
   font: 300 3em Intro-inline, Georgia;
   color: white;
   margin-top: -25px;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.9);
 }
 .main_message p:nth-of-type(2) {
   font: 300 1.7em Bariol, Georgia;
